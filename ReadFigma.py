@@ -28,7 +28,10 @@ if __name__ == "__main__":
         js = json.loads(f.read())
        
     res = proc_json(js)
-    print(res)
+    if type(res) is list:
+        for elm in res:
+            print(elm.get_js())
+    else: print(res.get_js())
     #tst = 2
     #if p := tst:
         #print(p)

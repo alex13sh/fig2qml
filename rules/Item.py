@@ -9,3 +9,12 @@ class Item:
             self.y = pos["y"]
             self.width = pos["width"]
             self.height = pos["height"]
+            
+    def get_js(self):
+        js = self.__dict__
+        js["type"] = self.__class__.__name__
+        childs = []
+        for child in self.children:
+            childs.append(child.get_js())
+        js["children"] = childs
+        return js
