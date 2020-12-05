@@ -6,3 +6,11 @@ class Element:
         
         self.name = name
         self.type = type
+
+def get_element_by_path(childs: list, name:str, type: str):
+    for elm in childs:
+        if (not name or name in elm.get("name", "").split("/")) \
+        and (not type or type == elm.get("type", None)):
+            return elm
+        
+    return None

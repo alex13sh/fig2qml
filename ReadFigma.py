@@ -6,7 +6,7 @@ def proc_json(js):
     if rule is not None:
         rule = rule(js)
         if not rule.__can_children__:
-            js["children"] = None
+            js["children"] = []
     
     children = []
     for child in js.get("children", []):
