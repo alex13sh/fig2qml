@@ -10,10 +10,10 @@ class Button(Item):
         
         if "children" in js:
             childs = js["children"]
-            elm = FigmaScan.get_element_by_path(childs, name=None, type="GROUP")
+            elm = FigmaScan.find_element(childs, name=None, type="GROUP")
             #print("elm:", elm)
             if elm:
-                elm = FigmaScan.get_element_by_path(elm.get("children"), name="Label", type="TEXT")
+                elm = FigmaScan.find_element(elm.get("children"), name="Label", type="TEXT")
             if elm:
                 self.text = elm.get("characters", None)
             

@@ -10,7 +10,7 @@ class PageHeader(Item):
         
         if "children" in js:
             childs = js["children"]
-            elm = FigmaScan.get_element_by_path(childs, name="Label", type="TEXT")
+            elm = FigmaScan.find_element(childs, name="Label", type="TEXT")
             if elm:
                 self.title = elm.get("characters", None)
         
