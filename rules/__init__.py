@@ -1,8 +1,9 @@
 
 from .Rectangle import Rectangle
+from .Page import Page
 
 
-__rules__ = [Rectangle]
+__rules__ = [Rectangle, Page]
 
 def get_rule(name, type):
     for rule in __rules__:

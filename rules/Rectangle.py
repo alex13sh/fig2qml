@@ -11,12 +11,3 @@ class Rectangle(Item):
             self.radius = js["cornerRadius"]
         else: self.radius = 1.0
             
-    def __repr__(self): 
-        return f"""
-Rectangle{{
-    x: {self.x}
-    y: {self.y}
-    width: {self.width}
-    height: {self.height}
-    radius: {self.radius}
-}}"""
