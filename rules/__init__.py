@@ -2,9 +2,9 @@
 from .Rectangle import Rectangle
 from .Page import Page
 from .PageHeader import PageHeader
+from .Button import Button
 
-
-__rules__ = [Rectangle, Page, PageHeader]
+__rules__ = [Rectangle, Page, PageHeader, Button]
 
 def get_rule(name, type):
     for rule in __rules__:
