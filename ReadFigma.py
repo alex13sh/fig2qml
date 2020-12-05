@@ -31,8 +31,8 @@ if __name__ == "__main__":
     res = proc_json(js)
     if type(res) is list:
         for elm in res:
-            print(elm.get_js())
-    else: print(res.get_js())
+            print(elm.get_qml())
+    else: print(res.get_qml())
     #tst = 2
     #if p := tst:
         #print(p)
