@@ -1,6 +1,7 @@
  
 class Item:
     __figma_type__ = ""
+    __can_children__ = True
     
     def __init__(self, js):
         if "absoluteBoundingBox" in js:

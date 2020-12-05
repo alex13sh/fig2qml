@@ -4,18 +4,19 @@ import rules
 def proc_json(js):
     rule = rules.get_rule(js["name"], js["type"])
     if rule is not None:
-        print(f'{js["name"]}, {js["type"]}')
+        rule = rule(js)
+        if not rule.__can_children__:
+            js["children"] = None
+    
     children = []
-    if "children" in js:
-        for child in js["children"]:
-            res = proc_json(child)
-            if type(res) is list:
-                children.extend(res)
-            else:
-                children.append(res)
+    for child in js.get("children", []):
+        res = proc_json(child)
+        if type(res) is list:
+            children.extend(res)
+        else:
+            children.append(res)
 
     if rule:
-        rule = rule(js)
         rule.children = children
         return rule
     else:
